@@ -1,0 +1,26 @@
+<?php
+/**
+ * @var Laminas\View\Renderer\PhpRenderer $this
+ */
+$this->form->setAttribute('action', $this->url('application', ['action' => 'add']));
+?>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Tytuł</th>
+        <th>Treść</th>
+    </tr>
+    </thead>
+    <tbody>
+    <?php foreach ($this->posts as $post): ?>
+        <tr>
+            <td><?=$post->getId() ?></td>
+            <td><?=$post->getTitle() ?></td>
+            <td><?=$post->getBody() ?></td>
+        </tr>
+    <?php endforeach; ?>
+    </tbody>
+</table>
+<?= $this->form($this->form) ?>
